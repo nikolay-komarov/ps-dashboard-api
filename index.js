@@ -1,14 +1,13 @@
-import http from 'http';
+import express from 'express';
 
-const host = 'localhost';
-const port = 8000;
+const { PORT = 3000 } = process.env;
+const app = express();
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('hello world');
+app.get('/', (req, res) => {
+  res.send('hello world');
 });
 
-server.listen(port, host, () => {
-  console.log(`Listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
+
