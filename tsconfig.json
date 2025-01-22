@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    /* Projects */
+    /* Language and Environment */
+    "target": "es6",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    /* Modules */
+    "module": "Node16",
+    "moduleResolution": "NodeNext",
+    /* JavaScript Support */
+    /* Emit */
+    "outDir": "./dist",
+    "removeComments": true,
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    /* Type Checking */
+    "strict": true,
+    "strictPropertyInitialization": false,
+    /* Completeness */
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
