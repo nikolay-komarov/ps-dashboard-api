@@ -6,8 +6,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     /* Modules */
-    "module": "Node16",
-    "moduleResolution": "NodeNext",
+    "module": "commonjs",
+    "moduleResolution": "node",
     /* JavaScript Support */
     /* Emit */
     "outDir": "./dist",

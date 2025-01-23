@@ -10,7 +10,8 @@
   "author": "Nikolay Komarov",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "tslog": "^3.3.4"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",

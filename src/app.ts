@@ -1,5 +1,6 @@
 import express, { Express } from "express";
 import { Server } from "http";
+import { LoggerService } from "./logger/logger.service";
 import { usersRouter } from "./users/users";
 
 export class App {
@@ -7,7 +8,7 @@ export class App {
   port: number = 3000;
   server: Server;
   
-  constructor() {
+  constructor(private _logger: LoggerService) {
     this.app = express();
   }
   
@@ -19,6 +20,7 @@ export class App {
     this.useRoutes();
     this.server = this.app.listen(this.port);
     
-    console.log(`Server running on port: ${this.port}`);
+    // console.log(`Server running on port: ${this.port}`);
+    this._logger.info(`App listening on port ${this.port}`);
   }
 }
