@@ -1,6 +1,7 @@
-import {NextFunction, Request, Response} from "express";
-import {BaseController} from "../common/base.controller";
-import {LoggerService} from "../logger/logger.service";
+import { NextFunction, Request, Response } from "express";
+import { BaseController } from "../common/base.controller";
+import { HTTPError } from "../errors/http-error";
+import { LoggerService } from "../logger/logger.service";
 
 export class UserController extends BaseController {
   constructor(logger: LoggerService) {
@@ -10,7 +11,8 @@ export class UserController extends BaseController {
       {
         path: '/signin',
         func: (_req: Request, res: Response, _next: NextFunction) => {
-          res.send('signin');
+          // res.send('signin');
+          _next(new HTTPError(401, 'ошибка входа', 'signin'))
         },
         method: 'post',
       },
