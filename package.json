@@ -5,7 +5,9 @@
   "main": "dist/main.js",
   "scripts": {
     "start": "node ./dist/main.js",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint ./src/**",
+    "lint:fix": "eslint ./src/** --fix"
   },
   "author": "Nikolay Komarov",
   "license": "ISC",
@@ -17,6 +19,12 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.4.2",
     "typescript": "^5.7.3"
   }
 }
