@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { LoggerService } from "../logger/logger.service";
+import { injectable } from "inversify";
+import { ILogger } from "../logger/logger.interface";
 import { IControllerRouter } from "./router.interface";
 
+@injectable()
 export abstract class BaseController {
-  private _router: Router;
+  private readonly _router: Router;
   
-  constructor(private logger: LoggerService) {
+  constructor(protected _logger: ILogger) {
     this._router = Router();
   }
   
@@ -15,7 +17,7 @@ export abstract class BaseController {
   
   protected bindRoutes(routes: IControllerRouter[]) {
     routes.forEach(route => {
-      this.logger.info(`[${route.method}] ${route.path}`);
+      this._logger.info(`[${route.method}] ${route.path}`);
       this.router[route.method](route.path, route.func.bind(this));
     })
   }
